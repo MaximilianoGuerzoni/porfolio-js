@@ -1,22 +1,126 @@
-<section    id="contacto"
-			class="landing-section justify-center items-center bg-white h-screen w-screen text-center overflow-hidden relative"
-            data-header-color='black'
-		>
-			<div class="z-30 relative h-full flex flex-col mt-24">
-				<header class="flex-col">
-					<h2 
-					class="text-black pt-40px text-[40px] font-medium">
-					
-						CONTACTO
-	
-					</h2>
-					<p class="text-black text-sm">
-						Pueden contactarme por cualquiera de mis redes sociales, o si lo prefiere por el siguiente formulario
-					</p>
-				</header>
-				
-			</div>
-			
-			
-	
-		</section>
+<section
+	id="contacto"
+	class="landing-section justify-center items-center bg-white h-screen w-screen text-center overflow-hidden relative"
+	data-header-color="black"
+>
+	<div class="z-30 relative h-full flex flex-col mt-32 ">
+		<header class="flex-col ">
+			<h2 class="text-black pt-40px text-[40px] font-medium ">CONTACTO</h2>
+			<div class="mt-12">
+				<div class="flex items-center justify-center mb-14">
+					<a  class="w-12 "
+						href="https://www.facebook.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						><i class="fab fa-facebook"></i><img
+							src="	facebook-icon.png"
+							alt="facebook-icon"
+						/></a
+					>
+					<a	class="w-12"
+						href="https://www.instagram.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						><i class="fab fa-facebook"></i><img
+							src="instagram-icon.png"
+							alt="instagram-icon"
+						/></a
+					>
+					<a	class="w-12"
+						href="https://www.github.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						><i class="fab fa-facebook"></i><img
+							src="git-icon.png"
+							alt="git-icon"
+						/></a
+					>
+					<a	class="w-12"
+						href="https://www.linkedin.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						><i class="fab fa-facebook"></i><img
+							src="linkedin-icon.png"
+							alt="linkedin-icon"
+						/></a
+					>
+				</div>
+			<p class="text-black text-sm mb-8">
+				Pueden contactarme por cualquiera de mis redes sociales, o si lo
+				prefiere por el siguiente formulario
+			</p>
+		</header>
+		
+			<form id="form">
+				<div class="field">
+					<label for="from_name">Nombre</label>
+					<input
+						class="ml-6 border border-solid border-gray-300 rounded-lg px-2 py-1 mb-3"
+						type="text"
+						name="from_name"
+						id="from_name"
+					/>
+				</div>
+				<div class="field">
+					<label for="message">Mensaje</label>
+					<input
+						class="ml-6 border border-solid border-gray-300 rounded-lg px-2 py-1 mb-3"
+						type="text"
+						name="message"
+						id="message"
+					/>
+				</div>
+				<div class="field">
+					<label for="email_id">Email</label>
+					<input
+						class="border border-solid border-gray-300 rounded-lg ml-10 px-2 py-1 mb-3"
+						type="text"
+						name="email_id"
+						id="email_id"
+					/>
+				</div>
+				<input
+					class="ml-8 border border-solid border-gray-300 rounded-lg mb-3 py-2 px-2 hover:text-white hover:bg-yellow-300"
+					type="submit"
+					id="button"
+					value="Send Email"
+				/>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	const btn = document.getElementById("button");
+
+	document
+		.getElementById("form")
+		.addEventListener("submit", function (event) {
+			event.preventDefault();
+
+			btn.value = "Sending...";
+
+			const serviceID = "default_service";
+			const templateID = "template_2q2c48m";
+
+			emailjs.sendForm(serviceID, templateID, this).then(
+				() => {
+					btn.value = "Send Email";
+					alert("Sent!");
+				},
+				(err) => {
+					btn.value = "Send Email";
+					alert(JSON.stringify(err));
+				}
+			);
+		});
+</script>
+
+<script
+	type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+
+<script type="text/javascript">
+	emailjs.init("4envBK_qXc-q4AvMW");
+</script>
