@@ -3,13 +3,14 @@
 	class="landing-section justify-center items-center bg-white h-screen w-screen text-center overflow-hidden relative"
 	data-header-color="black"
 >
-	<div class="z-30 relative h-full flex flex-col mt-32 ">
-		<header class="flex-col ">
-			<h2 class="text-black pt-40px text-[40px] font-medium ">CONTACTO</h2>
+	<div class="z-30 relative h-full flex flex-col mt-32">
+		<header class="flex-col">
+			<h2 class="text-black pt-40px text-[40px] font-medium">CONTACTO</h2>
 			<div class="mt-12">
 				<div class="flex items-center justify-center mb-14">
-					<a  class="w-12 "
-						href="https://www.facebook.com/"
+					<a
+						class="w-12 mr-6 hover:scale-110 transition-all 300ms"
+						href="https://www.facebook.com/maxjesusguerzoni/"
 						target="_blank"
 						rel="noopener noreferrer"
 						><i class="fab fa-facebook"></i><img
@@ -17,8 +18,9 @@
 							alt="facebook-icon"
 						/></a
 					>
-					<a	class="w-12"
-						href="https://www.instagram.com/"
+					<a
+						class="w-12 mr-6 hover:scale-110 transition-all 300ms"
+						href="https://www.instagram.com/maxi_guerzoni/"
 						target="_blank"
 						rel="noopener noreferrer"
 						><i class="fab fa-facebook"></i><img
@@ -26,8 +28,9 @@
 							alt="instagram-icon"
 						/></a
 					>
-					<a	class="w-12"
-						href="https://www.github.com/"
+					<a
+						class="w-12 mr-6 hover:scale-110 transition-all 300ms"
+						href="https://github.com/MaximilianoGuerzoni"
 						target="_blank"
 						rel="noopener noreferrer"
 						><i class="fab fa-facebook"></i><img
@@ -35,8 +38,9 @@
 							alt="git-icon"
 						/></a
 					>
-					<a	class="w-12"
-						href="https://www.linkedin.com/"
+					<a
+						class="w-12 mr-6 hover:scale-110 transition-all 300ms"
+						href="https://www.linkedin.com/in/maximiliano-g%C3%BCerzoni-481758252/"
 						target="_blank"
 						rel="noopener noreferrer"
 						><i class="fab fa-facebook"></i><img
@@ -45,12 +49,12 @@
 						/></a
 					>
 				</div>
-			<p class="text-black text-sm mb-8">
-				Pueden contactarme por cualquiera de mis redes sociales, o si lo
-				prefiere por el siguiente formulario
-			</p>
-		</header>
-		
+				<p class="text-black text-sm mb-8">
+					Pueden contactarme por cualquiera de mis redes sociales, o
+					si lo prefiere por el siguiente formulario
+				</p>
+			</div>
+
 			<form id="form">
 				<div class="field">
 					<label for="from_name">Nombre</label>
@@ -86,11 +90,12 @@
 					value="Send Email"
 				/>
 			</form>
-		</div>
+		</header>
 	</div>
 </section>
 
 <script>
+	 import Swal from 'sweetalert2';
 	const btn = document.getElementById("button");
 
 	document
@@ -106,7 +111,11 @@
 			emailjs.sendForm(serviceID, templateID, this).then(
 				() => {
 					btn.value = "Send Email";
-					alert("Sent!");
+					Swal.fire(
+						"Mensaje enviado!",
+						"Me contactare a la brevedad!",
+						"success"
+					);
 				},
 				(err) => {
 					btn.value = "Send Email";
@@ -115,6 +124,11 @@
 			);
 		});
 </script>
+
+<script>
+	import Swal from 'sweetalert2';
+  </script>
+
 
 <script
 	type="text/javascript"
