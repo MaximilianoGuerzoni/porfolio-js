@@ -1,0 +1,30 @@
+---
+import Cosplay from "../components/Cosplay.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Stream from "../components/Stream.astro";
+import Videos from "../components/Skills.astro";
+import Layout from "../layouts/Layout.astro";
+import Skills from "../components/Skills.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<LandingHeader></LandingHeader>
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
+		<div class="snap-center">
+			<HeroSection></HeroSection>
+		</div>
+		<div class="snap-center">
+			<Skills></Skills>
+		</div>	
+		<div class="snap-center">
+			<Stream></Stream>
+		</div>
+		<div class="snap-center">	
+			<Cosplay></Cosplay>
+		</div> 
+	
+
+		
+	</main>
+</Layout>
